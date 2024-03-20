@@ -1,4 +1,4 @@
-# R-shiny-app-project
+# R shiny app project
 
 In this project, I designed a Shiny app on the Asylum data. The app provides a variety of advanced statistical methods such as:
 - data analysis methods (e.g. machine learning models, linear models, tools for checking the assumptions of each model, specific summary tables for the results of each model, etc.)
