@@ -7,10 +7,10 @@ In this project, I designed a Shiny app on the Asylum data. The app provides a v
 - interactive map to view and explore the variables and data in each country
 
 
-  ----------------------------------------------------
+### App access
 
   
-At the moment, the best way to run the app is to directly run the AS-Shiny.R file. Unfortunately, the shinyapp server is a bit weak to handle complex apps like this (after all, R was designed for convenient data analysis, not for designing web apps). The current configuration can be found [here](https://amogharab.shinyapps.io/AS-Shiny/) but because of the server problems, you might need to refresh the page multiple times to get the app to run properly. I will design a custom architecture to fix this later.
+At the moment, the best way to run the app is to directly run the AS-Shiny.R file. Unfortunately, the shinyapp server is a little weak to handle this apps (after all, R was designed for convenient data analysis, not for designing web apps). The current configuration can be found [here](https://amogharab.shinyapps.io/AS-Shiny/) but due to the server problems, you might need to refresh the page multiple times to get the app to run properly. I'm working on a custom architecture to fix this.
 
 
 <img src="Images/Env.png" alt="Image" width="840" height="450">
