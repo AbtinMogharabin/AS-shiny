@@ -67,12 +67,7 @@ tabPanel('Data Visualization', icon = icon("chart-bar"),
                                                  ,'get'='+theme_get()'),
                                   selected=1),
                       
-                      
-                      
-                      
-                      
                       titlePanel("Extra modifications:"),
-                      
                       checkboxInput("boxplot", label = "Box Plot", value = FALSE),
                       checkboxInput("violin", label = "Violin Plot", value = FALSE),
                       checkboxInput("checkbox", label = "Linear Regression", value = FALSE),
@@ -81,25 +76,14 @@ tabPanel('Data Visualization', icon = icon("chart-bar"),
                       checkboxInput("lognomial", label = "Log Plot", value = TRUE),
                       downloadButton("downloader", "Download", class = "btn btn-primary"),
                       
-                      
                       hr(),
                       fluidRow(column(2, verbatimTextOutput("value"))
                       )
-                      
-                      
-                      
-             )),
-           
-           
-           
-           
+             )
+           ),
            mainPanel(
-             
              h3(textOutput("caption")),
-             
              plotOutput("myplot")
            )
-           
-           
          )
 )
