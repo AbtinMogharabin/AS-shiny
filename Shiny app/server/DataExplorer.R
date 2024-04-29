@@ -22,11 +22,8 @@ DATA <- eventReactive(input$update11, {
 
 # Data output
 output$tbl11 = renderDataTable({
-  
   DT::datatable(DATA(), options = list(lengthChange = FALSE))
 })
-
-
 
 summaryfunc <- eventReactive(input$update11, {
   d3 = read.csv("asylum_seekers_refugee_status.csv", skip = 3, header = T)
