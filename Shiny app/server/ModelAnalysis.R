@@ -10,20 +10,15 @@ model <- reactive({
     summary(lm(y1 ~ x1))
   } 
   
-  
   else if (input$model_choice == "SVR") {
     model <- svm(y1 ~ x1, kernel = "linear")
     summary(model)  # Print the model summary
   }
-  
-  
-  
+
   else if (input$model_choice == "Naive Bayes") {
     naiveBayes(y1 ~ x1, data = cbind(x1,y1))
   }
   
-  
-  ############################################################### 
   else if (input$model_choice == "Random Forest") {
     
     # Build the Random Forest model
@@ -45,7 +40,6 @@ model <- reactive({
     train = data[parts, ]
     test = data[-parts, ]
     
-    
     train = data.matrix(train)
     test = data.matrix(test)
     
@@ -54,7 +48,6 @@ model <- reactive({
     
     train_scaled = scale(train[, -1])
     test_scaled = scale(test[, -1])
-    
     
     test_pred <- knn(
       train = train_scaled, 
@@ -71,18 +64,12 @@ model <- reactive({
     sprintf("Accuracy: %.2f%%", (1 - accuracy)*100)
     print(test_pred)
   }
-  ###############################################################
-  
-  
   
   else if (input$model_choice == "LightGBM"){
-    
     data = cbind(x1,y1)
-    
     parts = sample(2500 * .9)
     train = data[parts, ]
     test = data[-parts, ]
-    
     
     #define predictor and response variables in training set
     train_x1 = as.matrix(train[,-ncol(train)])
@@ -111,9 +98,7 @@ model <- reactive({
     )
     print("summary of the model results:")
     print(summary(predict(fit, test_x1) == test_y))
-    print("")
-    print("")
-    print("")
+    print("\n\n\n")
     print("the models used:")
     print(lgb.train(
       params
@@ -123,7 +108,6 @@ model <- reactive({
     ))
   }
   
-  
   else if (input$model_choice == "XGBoost"){
     
     data = cbind(x1,y1)
@@ -131,7 +115,6 @@ model <- reactive({
     parts = sample(2500 * .9)
     train = data[parts, ]
     test = data[-parts, ]
-    
     
     #define predictor and response variables in training set
     train_x1 = as.matrix(train[,-ncol(train)])
@@ -141,15 +124,12 @@ model <- reactive({
     test_x1 = as.matrix(test[,-ncol(test)])
     test_y = as.matrix(test[,"y1"])
     
-    
-    
     #define final training and testing sets
     xgb_train = xgb.DMatrix(data = train_x1, label = train_y)
     xgb_test = xgb.DMatrix(data = test_x1, label = test_y)
     watchlist = list(train=xgb_train, test=xgb_test)
     xgb.train(data = xgb_train, max.depth = 3, watchlist=watchlist, nrounds = 50)
   }
-  
 })
 
 output$summary <- renderPrint({
@@ -170,13 +150,8 @@ output$predict <- renderPrint({
   data_frame = data.frame(x1 = data())
   pred_value  = predict(fit, data_frame, interval = 'confidence')
   cat('Machine Learning Models\nData                 : Asylum Seekers\nResponse variable    : y \nExplanatory variables: x\nInterval             : Confidence \nPrediction dataset   : Asylum Seekers')
-  
   cat('\nY model prediction: ', pred_value[[1]], '\nY lower bound     : ', pred_value[[2]], '\nY upper bound     : ', pred_value[[3]] )
-  
 })
-
-
-
 
 # Scatterplot output
 output$scatterplot <- renderPlot({
