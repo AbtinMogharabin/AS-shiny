@@ -37,11 +37,7 @@ tabPanel('DataExplorer',icon = icon("table"),
                          tabPanel("Summary",
                                   verbatimTextOutput('summary11'))
                          # Summary  
-                         
              )
            )
-           
          )
-         
-         
 )
