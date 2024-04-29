@@ -44,10 +44,7 @@ tabPanel('ModelAnalysis', icon=icon("external-link-square"),
              fluidRow(
                column(3,actionButton(inputId = 'go', label = "Predict!",icon = icon("play"), align = "center"))
              ),
-             
              width = 2
-             
-             
            ),
            
            mainPanel(
@@ -68,6 +65,8 @@ tabPanel('ModelAnalysis', icon=icon("external-link-square"),
                                   
                          ),
                          tabPanel("Model Summary", verbatimTextOutput("summary")), # Regression output
-                         tabPanel("Prediction", verbatimTextOutput('predict') ) # Data as datatable
-                         
-             ))))
+                         tabPanel("Prediction", verbatimTextOutput('predict') ) # Data as datatable 
+             )
+           )
+         )
+        )
