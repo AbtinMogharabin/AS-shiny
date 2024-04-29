@@ -9,15 +9,12 @@ navbarMenu("About", icon = icon("info-circle"),
                                 br(),
                                 p("Sources include UNHCR Population Statistics and UNHCR Populations of Concern."),
                              )
-                             
                       ),
                       HTML('<img src="https://donate.unhcr.org/sites/default/files/styles/social_large/public/2021-07/MicrosoftTeams-image%20%287%29.png?h=9b44de68&itok=2CEkypeH", height="300px"
                                         style="float:left"/>','<p style="color:black"></p>'),
                       br()
                     )
-                    
            ),
-           
            tabPanel("Our Work", fluid = TRUE,
                     fluidRow(
                       column(6,
@@ -28,8 +25,7 @@ navbarMenu("About", icon = icon("info-circle"),
                              h5(p("Our interactive app can provide easy access to over 100,000 datapoints collected for 14 variables over the span of 15 years! This can not only prove to be helpful for people who want to learn about this grave issue, but also for human rights activists who want easy access to facts AND the underprivileged people who want to find the safest place for refuge and asylum. ")),
                              br(),
                              h5(p("We provide a range of services: from smart searching and exploration of the data, to stunning and easy to understand visuals (including maps, plots and linear regression models).")),
-                             
-                             
                       ),
-                      
-                    )))
+                    )
+                   )
+          )
