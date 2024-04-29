@@ -16,7 +16,6 @@ tabPanel("Questions",icon = icon("question-circle"),
                      br(),
                      h5(p("I hope you found our Shiny App useful.  Any comments or questions are welcome at atbinmogharabin@gmail.com"),
                         p("The source code is available ", a("here", href = "https://github.com/abtinmogharabin"), "."))
-                     
                      #hr(),
                   )
            )
@@ -30,7 +29,5 @@ tabPanel("Questions",icon = icon("question-circle"),
                href = "https://data.world/unhcr/asylum-applications/"))),
          h5("Built with",
             img(src = "https://www.rstudio.com/wp-content/uploads/2014/04/shiny.png", height = "30px"),
-            
          )
-         
 )
